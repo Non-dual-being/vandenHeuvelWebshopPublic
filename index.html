@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Kevin de Schepper">
+    <meta name="description" content="Schapenhouderij Van den Heuvel webshop"> 
+    <title>Schapenhouder VDH - Contact</title>
+    <link rel="icon" href="./images/sheep-favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <script defer type="module" src="js/time_line.js"></script>
+</head>
+<body>
+    <!-- Header met achtergrondafbeelding en logo -->
+    <header class="header">
+        <figure class="header__banner">
+            <figcaption class="offscreen">Header_BANNER_IMG</figcaption>
+        </figure>
+        <div class="header__top-bar">
+            <p class="header__contact-info">contact.vandenheuvel@gmail.com </p>
+        </div>
+        <h1 class="header__title">
+            <figure>
+                <img src="images/logo.jpg" alt="Logo Schapenhouderij van den Heuvel" class="header__h1-logo">
+                <figcaption class="offscreen">Header_logo_van_den_Heuvel</figcaption>
+            </figure>
+            Schapenhouderij Van den Heuvel
+        </h1>
+    </header>
+    
+    <!-- Sticky Navigatiebalk -->
+    <nav class="header__navigation">
+        <ul class="header__navigation-ul">
+            <li><a id = "active-navLink" href="#home">Home</a></li>
+            <li><a href="#producten">Producten</a></li>
+            <li><a href="overOns.html">Over ons</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+        <main class="main-content">
+            <header class="timeline-header">
+                <h1 class="timeline-header__h1">Het verhaal achter van de heuvel</h1>
+                <p>Scroll door ons verhaal en ontdek waar we nu staan</p>
+                <button class="timeline-header__button" id="timeline-header__button">Bekijk ons verhaal</button>
+            </header>
+    
+            <section class="timeline-grid" id="timeline-grid">
+                <div class="timeline__row">
+                    <!-- Linker item -->
+                    <div class="timeline__item timeline__item--left">
+                        <div class="timeline__content">
+                            <h3 >Hoe we zijn begonnen</h3>
+                            <p>Het begon met onze twee geliefde geiten die onderdak vonden in onze schuur in Haaften.</p>
+                            <figure class="timeline__content">
+                                <img src="./images/hoe_het_begon.jpg" alt="Beschrijving van de afbeelding">
+                                <figcaption>Waar het begon</figcaption>
+                            </figure>
+                            
+                        </div>
+                    </div>
+                    <!-- Middenlijn -->
+                    <div class="timeline__line" >
+                        <img src="images/sheep-favicon.ico" alt="Sheep icon" class="timeline__icon">
+                    </div>
+                    <!-- Rechter item -->
+                    <div></div>
+                </div>
+            
+                <div class="timeline__row">
+                    <!-- Linker leeg -->
+                    <div></div>
+                    <!-- Middenlijn -->
+                    <div class="timeline__line">
+                        <img src="images/sheep-favicon.ico" alt="Sheep icon" class="timeline__icon">
+                    </div>
+                    <!-- Rechter item -->
+                    <div class="timeline__item timeline__item--right">
+                        <div class="timeline__content">
+                            <h3>Waar staan we nu</h3>
+                            <p>Een officieel bedrijf met 150 schapen en duurzame projecten.</p>
+                            <figure class="timeline__content">
+                                <img src="./images/waar_staan_we_nu.jpg" alt="Beschrijving van de afbeelding">
+                                <figcaption>We volgen een duurzame toekomst</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="timeline__row">
+                    <!-- Linker item -->
+                    <div class="timeline__item timeline__item--left">
+                        <div class="timeline__content">
+                            <h3>Onze activiteiten</h3>
+                            <p>Begrazing, wolbewerking, en bestrijding van berenklauw.</p>
+                            <figure class="timeline__content">
+                                <img src="./images/hard_werken_loont.jpg" alt="Beschrijving van de afbeelding">
+                                <figcaption>Oog voor vakmanschap loont</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                    <!-- Middenlijn -->
+                    <div class="timeline__line">
+                        <img src="images/sheep-favicon.ico" alt="Sheep icon" class="timeline__icon">
+                    </div>
+                    <!-- Rechter leeg -->
+                    <div></div>
+                </div>
+            </section>   
+            <section class="navigate-grid">
+                <div class="navigate-grid__item navigate-grid__item--left">
+                    <div class="navigate-grid__content navigate-grid__content--left">
+                        <h3>Bekijk onze producten</h3>
+                        <p>Ontdek het assortiment schapenvlees en andere producten.</p>
+                        <a href="#producten" class="navigate-button">Ga naar Producten</a>
+                    </div>
+                </div>
+                <div class="navigate-grid__line">
+                    <div id="navIcon">
+                        <img src="./images/logo.jpg" alt="Sheep Icon" class="navigate-icon">
+                    </div>
+                </div>
+                <div class="navigate-grid__item navigate-grid__item--right">
+                    <div class="navigate-grid__content navigate-grid__content--right">
+                        <h3>Lees meer over ons</h3>
+                        <p>Kom alles te weten over onze begrazing en duurzame projecten.</p>
+                        <a href="overOns.html" class="navigate-button">Ga naar Over Ons</a>
+                    </div>
+                </div>
+            </section>
+    
+            
+            
+               
+        </main>
+        <footer class="footer">
+            <section class="footer__section-contact">
+                <h2>Contact</h2>
+                <address>
+                    <p>Geerstraat 14</p>
+                    <p>Herwijnen, Nederland</p>
+                </address>
+                <p>Email: <a href="mailto:contact.vandenheuvel@gmail.com">contact.vandenheuvel@gmail.com</a></p>
+            </section>
+            <section class="footer__section-social">
+                <h2>Volg ons</h2>
+                <a href="https://www.instagram.com/schapenhouderij_van_den_heuvel/" target="_blank" class="instagram-link">
+                    <div class="instagram">
+                        <span></span> <!-- Kleine stip voor het logo -->
+                    </div>
+                </a>
+            </section>
+        </footer>
+    </body>
+</html>

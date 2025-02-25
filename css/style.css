@@ -1,0 +1,1419 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Nunito+Sans:wght@400;600&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+/* Basis styling */
+/* Basis styling */
+:root {
+    --ff-base: 'Nunito Sans', sans-serif;
+    --ff-heading: 'Lora', serif;
+    --color-primary: #4caf50; /* Groen voor kopteksten */
+    --color-secondary: #003366; /* Donkerblauw voor accenten */
+    --color-pallete-bg: #f5f5dc;
+    --color-pallete-darkest-blue: #001933;
+    --color-pallet-bg-light-blue: #cce5ff;
+    --color-secondary-scroll: rgba(0, 51, 102, 0.9); /* Donkerblauw voor accenten */
+    --color-text: #333; /* Tekstkleur */
+    --color-bg: #f8f8f8; /* Achtergrondkleur algemeen */
+    --color-bg-secondary: #f5f5dc; /* Licht beige als secundaire achtergrond */
+    --color-top-bar: #4caf50; /* Groene balk voor bovenste sectie */
+    --color-border: #eaeaea;
+    --color-nav-bg: #ffffff; /* Witte achtergrond voor navigatie */
+    --padding: 1rem;
+    --color-scroll-thumb: #004080; /* Blauw voor de scrollbar thumb */
+    --color-scroll-thumb-hover: #0066cc; /* Lichtere blauw voor scrollbar thumb hover */
+    --color-scroll-track: rgba(0, 51, 102, 0.1); /* Trackkleur voor scrollbar */
+    --color-scroll-button: #004080; /* Kleur voor knoppen van de scrollbar */
+    --color-scroll-button-hover: #0066cc; /* Kleur bij hover voor knoppen */
+    --color-border-beige: #f5f5dc; /* Beige randkleur om in de achtergrond op te gaan */
+    --color-bg-blue-form: rgba(0, 51, 102, 0.01); /* Donkerblauw bij hover */
+
+
+    /* Responsive font-size */
+    --font-size-base: clamp(1rem, 1vw + 0.5rem, 1.2rem);
+    --font-size-heading: clamp(1.5rem, 2vw + 0.5rem, 2.5rem);
+
+    /* Responsive margin */
+    --margin-responsive: clamp(5px, 1.8vw, 8px);
+    --margin-label-responsive-top: clamp(5px, 5vh, 10px);
+    --margin-label-responsive-bottom: clamp(-11px, 3vh, -7px);
+    --padding-responsive: clamp(0.3rem, 2vh, 0.4rem) clamp(0.8rem, 4vw, 1.3rem);
+    --padding-responsive-smal: clamp(0.3rem, 1vh, 0.4rem) clamp(0.8rem, 2vw, 1rem);
+    --padding-responsive-form: clamp(1rem, 4vh, 1.4rem) clamp(0.8rem, 5vw, 1.3rem);
+    --text-shadow-form: 0px 0px 0.7px var(--color-secondary);
+    --box-shadow-inputs-form-focus:  inset 0 0 0 4px rgba(0, 51, 102, 0.2); /* Lichte schaduw voor diepte inset is naar binnen*/ 
+    --box-shadow-inputs-form:  inset 0 2px 5px rgba(0, 0, 0, 0.05); /* Lichte schaduw voor diepte inset is naar binnen*/
+    --border-form: 1px solid #ddd; /* Neutrale randkleur */
+    --border-color-hover: rgba(0, 51, 102, 0.8); /* Donkerblauw bij hover */
+
+
+
+}
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--ff-base);
+    color: var(--color-text);
+    background-color: white;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 100vw;
+    font-size: var(--font-size-base);
+}
+
+
+/* Custom scrollbar styles for WebKit browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+    width: 8px; /* Small width for a thinner scrollbar */
+    height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--color-scroll-thumb); /* Blauw voor de scrollbar */
+    border-radius: 10px;
+    box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.2); /* Licht schaduw voor diepte */
+    transition: background-color 0.3s ease;
+    cursor:pointer;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--color-scroll-thumb-hover); /* Lichtere blauw bij hover */
+}
+
+::-webkit-scrollbar-track {
+    background-color: white;
+    border-radius: 4px;
+    transition: box-shadow 0.3s ease;
+}
+
+::-webkit-scrollbar-track:hover {
+    box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.2); /* Licht schaduw voor diepte */
+  
+}
+
+
+
+/* Pijl omhoog */
+::-webkit-scrollbar-button:single-button:vertical:decrement {
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black"><polygon points="8,4 12,10 4,10"/></svg>') no-repeat center;
+    
+}
+
+/* Pijl omlaag */
+::-webkit-scrollbar-button:single-button:vertical:increment {
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black"><polygon points="4,6 12,6 8,12"/></svg>') no-repeat center;
+    
+}
+
+
+/* Pijl naar links */
+::-webkit-scrollbar-button:single-button:horizontal:decrement {
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black"><polygon points="6,8 10,4 10,12"/></svg>') no-repeat center;
+
+}
+
+/* Pijl naar rechts */
+::-webkit-scrollbar-button:single-button:horizontal:increment {
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black"><polygon points="10,8 6,4 6,12"/></svg>') no-repeat center;
+   
+}
+
+
+@-moz-document url-prefix() {
+    /* Custom scrollbar styles specifically for Firefox */
+    html {
+        scrollbar-width: 8px; /* Sets the scrollbar width for Firefox */
+        scrollbar-color: var(--color-scroll-thumb) var(--color-scroll-track); /* Sets thumb and track color */
+    }
+}
+
+
+
+
+.footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: #003366;
+    padding: 20px;
+    color: white;
+    text-align: center;
+    gap: 5px;
+    width: 100%;
+    bottom: 0;
+    font-size: var(--font-size-base);
+}
+
+.footer__section-contact,
+.footer__section-social {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer__section-social h2 {
+    margin-bottom: 10px;
+}
+
+/* Contact sectie styling */
+.footer__section-contact a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer__section-contact a:visited {
+    color: white;
+}
+
+.footer__section-contact a:hover,
+.footer__section-contact a:focus {
+    color: #4caf50;
+    font-weight: bold;
+}
+
+/* Instagram logo styling */
+.instagram-link {
+    text-decoration: none;
+}
+
+.instagram {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out,box-shadow linear 0.4s;
+}
+
+.instagram:hover {
+    background: radial-gradient(circle at 30% 110%, #ffdb8b 0%, #ee653d 25%, #d42e81 50%, #a237b6 75%, #3e57bc 100%);
+    box-shadow: 0 0 10px white;
+    transform: scale(1.1);
+}
+
+.instagram::after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: 4px solid #003366;
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+}
+
+.instagram::before {
+    content: "";
+    position: absolute;
+    top: 22px;
+    right: 22px;
+    border: 3px solid #003366;
+    height: 14px;
+    width: 14px;
+    border-radius: 50%;
+}
+
+/* Stipje in het logo */
+.instagram span {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 5px;
+    height: 5px;
+    background-color: #003366;
+    border-radius: 50%;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.instagram span:hover {
+    background-color: rgba(0, 51, 102, 0.5);
+}
+
+/* Utility classes */
+.offscreen {
+    position: absolute;
+    left: -10000px;
+}
+
+/* Header */
+.header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative; /* Gewone positionering voor de header */
+    z-index: 2;
+}
+.header__top-bar {
+    width: 100%;
+    background-color: rgba(76, 175, 80, 0.99);
+    padding: 5px 0;
+    text-align: center;
+    font-size: 0.9rem;
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Banner-afbeelding */
+.header__banner {
+    width: 100%;
+    height: 250px;
+    background-image: url('../images/logo_banner_main.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.header__h1-logo {
+    width: 110px;
+    height: auto;
+    margin-top: 3px;
+    position: relative;
+    border-radius: 50%; /* Maakt het logo rond */
+    padding: 4px; /* Ruimte rond het logo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2; /* Zorgt ervoor dat het logo boven de overlay blijft */
+    transition: transform 0.3s; /* Voegt een hover-effect toe */
+    box-shadow: 0 0 3px white;
+    margin-right: 3px;
+}
+
+.header__h1-logo:hover {
+    box-shadow: 0 0 10px white;
+    transition: all linear 0.5s;
+}
+
+/* Titel */
+.header__title {
+    font-family: var(--ff-heading);
+    font-size: var(--font-size-heading);
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin: 0 auto;
+    width: 100%;
+    justify-content: center;
+    background-color: var(--color-bg);
+    padding: 10px 0;
+    box-shadow: 0 0 1px var(--color-text);
+    background-color: #003366;
+    padding: 15px 0;
+}
+
+/* Navigatie */
+.header__navigation {
+    background-color: var(--color-nav-bg);
+    width: 100%;
+    position: sticky;
+    top: 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    border-top: 1px solid var(--color-border);
+}
+
+.header__navigation-ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    gap: 20px;
+}
+
+.header__navigation-ul li a {
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--color-text);
+    padding: 5px 15px;
+    border-bottom: 2px solid transparent;
+}
+
+.header__navigation-ul li a:hover:not(#active-navLink) {
+    color: var(--color-primary);
+    border-bottom-color: var(--color-primary);
+    transition: all 0.2s linear;
+}
+
+#active-navLink {
+    color: var(--color-primary);
+    border-bottom-color: var(--color-primary);
+    font-weight: bolder;
+    transition: all ease-in 0.1s;
+}
+
+#active-navLink:hover {
+    color: var(--color-secondary);
+    border-bottom-color: var(--color-secondary);
+}
+
+.main-content {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    width: minmax(calc(100%-2rem), 100%);
+    min-height: 100%;
+    border: 1px solid var(white);
+    border-radius: 1px;
+    box-shadow: 0px 4px 8px white;
+    padding: var(--padding);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    min-width: 100%;
+}
+
+.main-content__grid {
+    color: var(--color-text);
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    min-width: 100%;
+    min-height: 100%;
+    box-sizing: border-box;
+    padding: var(--padding);
+}
+
+.main-content__form-section {
+    position: relative;
+    min-width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 0.1rem;
+    background-color: #f5f5f5;
+
+    /* Gebruik een gelaagde achtergrond met een transparante gradient */
+    background-image:
+        radial-gradient(circle, rgba(0, 0, 0, 0.8) 10%, rgba(255, 255, 255, 0.5) 15%, rgba(0, 0, 0, 0.8) 90%),
+        url("../images/new_sheep_form_backgrond.webp");
+    background-repeat: no-repeat, repeat;
+    background-size: cover, 8%; /* Bepaalt de breedte van de herhaling */
+    background-position: center, left top; /* Plaatsing van de gradient en achtergrondafbeelding */
+    border-radius: 7px;
+    margin-bottom: 5px;
+}
+
+
+.main-content__grid-form {
+    background-color: rgba(255, 255, 255, 0.99); /* Eenvoudige, licht transparante achtergrond */
+    padding: 2rem;
+    border-radius: 40px; /* Iets zachtere hoeken voor een moderne look */
+    max-width: 750px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    border: solid 5px rgba(0, 51, 102, 0.7);
+    z-index: 1;
+    transition: all 0.4s ease-in-out;
+}
+
+.main-content__grid-form:hover{
+    box-shadow: 0 6px 20px rgba(0, 51, 102, 0.95); /* Diepere schaduw voor een gelaagd effect */
+    background-color: rgba(255, 255, 255, 0.97); /* Eenvoudige, licht transparante achtergrond */
+    
+}
+
+.main-content__grid-form * {
+    box-sizing: border-box;
+}
+
+.main-content__grid-form input[type="text"],
+.main-content__grid-form input[type="email"],
+.main-content__grid-form textarea {
+    width: 100%;
+    padding: 0.8rem 1.2rem;
+    border-radius: 10px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;  
+    position: relative;
+}
+
+.main-content__grid-form input[type="text"],
+.main-content__grid-form input[type="email"] {
+    margin-bottom: 2rem;
+    border: var(--border-form);
+    box-shadow: var(--box-shadow-inputs-form);
+}
+
+.main-content__grid-form input[type="text"]:hover,
+.main-content__grid-form input[type="email"]:hover
+{
+    border-color: var(--border-color-hover);
+}
+.main-content__grid-form input[type="text"]:focus,
+.main-content__grid-form input[type="email"]:focus
+ {
+    border-color: rgba(0, 51, 102, 0.8); /* Donkerblauwe rand bij focus */
+    box-shadow: var(--box-shadow-inputs-form-focus);
+    outline: none;
+}
+
+.main-content__grid-form textarea {
+    width: 100%;
+    background-color: white;
+    border-radius: 5px;
+    padding: 6px;
+    color: black;
+    transition: border-color 0.3s, background-color 0.3s;
+    box-sizing: border-box;
+    font-family: 'Avenir', sans-serif;
+    resize: none; /* Voorkomt dat de gebruiker het formaat van het tekstvak kan wijzigen */
+    border: var(--border-form); /* Neutrale randkleur */
+    box-shadow: var(--box-shadow-inputs-form);
+    position: relative;
+}
+
+
+.main-content__grid-form textarea:hover {
+   border-color: var(--border-color-hover);
+   background-color: var(--colorb-bg-blue-form);
+}
+
+
+.main-content__grid-form textarea:focus{
+    background-color: var(--color-bg-blue-form);
+    border: 2px solid var(--border-blue-hover);
+    box-shadow: var(--box-shadow-inputs-form-focus);
+}
+
+.form__label {
+    margin-top: var(--margin-label-responsive-top);
+    margin-left: 0.3rem;
+    font-weight: 900; /* Subtielere gewicht voor moderne look */
+    color: #0a3a5b; /* Past bij de stijl van je formulier */
+    font-size: 1.4rem; /* Iets grotere labels voor een premium uitstraling */
+    display: block;
+    text-shadow: var(--text-shadow-form);
+}
+
+.form__label:first-child {
+    margin-top: 0;
+}
+
+.main-content__grid-form button {
+    background-color: rgba(0, 51, 102, 0.9); /* Donkerblauwe knop */
+    color: white;
+    border: none;
+    padding: 0.8rem 1.6rem;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease, box-shadow 0.2s ease;
+    margin-top: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 51, 102, 0.3); /* Zachte schaduw voor een zwevend effect */
+}
+
+.main-content__grid-form button:hover {
+    background-color: #003366; /* Donkerdere blauw bij hover */
+    transform: scale(1.03); /* Kleinere schaal voor een subtiel effect */
+    box-shadow: 0 6px 18px rgba(0, 51, 102, 0.4); /* Versterkte schaduw bij hover */
+}
+
+
+
+
+.tekenTeller{
+    display: hidden;
+    text-align: end;
+    font-weight: bold;
+    padding: var(--padding-responsive-smal);
+    color: var(--color-text);
+    font-size: 0.8em;
+    text-shadow: var(--text-shadow-form);
+}
+
+.contact {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: flex-end;
+    padding: var(--padding-responsive);
+    text-shadow: var(--text-shadow-form);
+}
+
+.contact p {
+    display: block;
+    font-size: var(--font-size-base);
+    color: var(--color-text);
+    font-weight: bold;
+    margin: var(--margin-responsive);
+    margin-bottom: -10px;
+    margin-left: -13px
+    
+}
+
+.contact__mailto,
+.contact__mailto:visited {
+    color: var(--color-secondary); /* Veranderd naar blauw voor beide states */
+    text-decoration: none;
+    font-weight: 900;
+}
+
+.contact__mailto:hover{
+    color: var(--color-primary);
+}
+
+.contact__mailto:active {
+    text-decoration: underline;
+    text-shadow: 0px 0px 1px white;
+}
+
+.form__legend {
+    font-weight: 700;
+    color: white;
+    background-color: var(--color-secondary);
+    border-radius: 35px;
+    padding: var(--padding-responsive);
+    border: 3px solid white;
+    text-align: center;
+    box-sizing: content-box;
+    justify-content: space-between; /* Plaatst elementen gelijkmatig verdeeld */
+    display: inline-block;
+    flex-direction: row;
+    min-width: max-content; 
+    white-space: nowrap; 
+
+    }
+
+.form__fieldset{
+    border: 1px solid var(--color-secondary);
+    padding: var(--padding-responsive-form);
+    border-radius: 10px;
+    background-image: 
+    linear-gradient(to left, rgba(255, 255, 255, 0.9) 90%, rgba(255, 255, 255, 0.9)),
+    url("../images/new_sheep_form_backgrond.webp");
+    background-repeat: no-repeat, repeat;
+    background-size: cover, 50%; /* Bepaalt de breedte van de herhaling */
+    background-position: center; /* Plaatsing van de gradient en achtergrondafbeelding */
+    border-radius: 10px;
+    padding: 1.5rem;
+    border: 2px solid #0a3a5b;
+    position: relative;
+}
+
+.form__Para {
+    display: flex;
+    position: relative;
+
+}
+
+/* Algemene stijl voor meldingen */
+.form__Melding {
+    position: absolute;
+    width: fit-content;
+    padding: var(--padding-responsive);
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    display: none; /* Wordt via JS op block gezet */
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtiele schaduw */
+    z-index: 2; /* Zorg dat het boven de input blijft */
+    transition: all 0.3s ease-in-out; /* Voor animaties */
+}
+
+
+/* Specifieke stijl voor succesmeldingen */
+.form__Infomelding {
+    background-image: 
+    linear-gradient(to left, rgba(255, 255, 255, 0.9) 95%, rgba(220, 220, 220, 0.9)),
+    url("../images/new_sheep_form_backgrond.webp");
+    
+    background-repeat: no-repeat, repeat;
+    background-size: cover, 0.1%; /* Bepaalt de breedte van de herhaling */
+    background-position: center; /* Plaatsing van de gradient en achtergrondafbeelding */
+    color: var(--color-scroll-thumb);
+    border: 3px solid rgba(0, 51, 102, 0.8); /* Donkerblauw bij hover */
+    text-shadow: var(--text-shadow-form);
+    font-family: "Georgia", serif;
+    letter-spacing: 0.05em;
+    max-width: 100%;
+}
+
+
+.form__Foutmelding {
+    background-image: 
+    linear-gradient(to left, rgba(255, 255, 255, 0.9) 95%, rgba(220, 220, 220, 0.9)),
+    url("../images/new_sheep_form_backgrond.webp");
+    
+    background-repeat: no-repeat, repeat;
+    background-size: cover, 0.1%; /* Bepaalt de breedte van de herhaling */
+    background-position: center; /* Plaatsing van de gradient en achtergrondafbeelding */
+    color: var(--color-scroll-thumb);
+    border: 3px solid rgba(255, 165, 0, 5); /* Transparante oranje rand */
+    text-shadow: var(--text-shadow-form);
+    font-family: "Georgia", serif;
+    letter-spacing: 0.05em;
+    max-width: 100%;
+}
+
+/* Specifieke stijl voor verzendknop-meldingen */
+.form__Verzendknop-Melding {
+    background-image: 
+    linear-gradient(to left, rgba(255, 255, 255, 0.9) 95%, rgba(220, 220, 220, 0.9)),
+    url("../images/new_sheep_form_backgrond.webp");
+    
+    background-repeat: no-repeat, repeat;
+    background-size: cover, 0.1%; /* Bepaalt de breedte van de herhaling */
+    background-position: center; /* Plaatsing van de gradient en achtergrondafbeelding */
+    color: var(--color-scroll-thumb);
+    border: 3px solid rgba(0, 51, 102, 0.8); /* Donkerblauw bij hover */
+    text-shadow: var(--text-shadow-form);
+    font-family: "Georgia", serif;
+    letter-spacing: 0.05em;
+    max-width: 100%;
+    left: 50%
+}
+
+/* Specifieke stijl voor verzendknop-foutmeldingen */
+.form__Verzendknop-Foutmelding {
+    background-image: 
+    linear-gradient(to left, rgba(0, 0, 0, 0.7) 80%, rgba(40, 40, 80, 0.5)), /* Zacht blauw accent */
+    url("../images/new_sheep_form_backgrond.webp");
+
+
+
+    background-repeat: no-repeat, repeat;
+    background-size: cover, 40%; /* Bepaalt de breedte van de herhaling */
+    background-position: center; /* Plaatsing van de gradient en achtergrondafbeelding */
+
+    color: #FFFFFF; /* Witte tekst voor contrast */
+    border: 3px solid #DDD; /* Minder transparante oranje rand */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Meer contrast met een donkere schaduw */
+    font-family: "Georgia", serif;
+    letter-spacing: 0.05em;
+    max-width: 100%;
+    font-size: 1em;
+
+}
+
+.main-content__grid-section-grid {
+    background-image: 
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.7), rgba(245, 245, 245, 0.7)), /* Zachte lichte gradient */
+        url("../images/new_sheep_form_backgrond.webp"); /* Achtergrond met schaapjespatroon */
+    background-repeat: no-repeat, repeat;
+    background-size: cover, 8%; /* De achtergrondafbeelding subtiel herhalen */
+    background-position: center top; /* Zorgt dat het patroon mooi gecentreerd is */
+    padding: 20px; /* Ruimte rondom de inhoud */
+    border-radius: 15px; /* Zachtere hoeken */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtiele schaduw voor diepte */
+    grid-template-columns: repeat(3, 1fr); /* Drie kolommen */
+    grid-template-rows: auto; /* Automatische rijen */
+    gap: 20px; /* Ruimte tussen de foto's */
+    max-width: 100vw;
+    margin: 5px auto; /* Centraal uitgelijnd en ruimte boven/onder */
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+    grid-gap: 20px;
+    padding: 22px;
+    margin: 0 auto;
+    justify-items: stretch;
+    align-items: stretch;
+    min-width: 100%;
+    background-image: linear-gradient(to left, rgba(255, 255, 255, 0.5), rgba(245, 245, 245, 0.5));
+    border-radius: 25px;
+    box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.8);
+}
+
+.photo-grid img {
+    border: 2px solid rgba(255, 255, 255, 1);
+    border-radius: 15px;
+}
+
+.photo-grid img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.8);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+
+
+.photo-item {
+    background-color: #e9e9e9; /* Achtergrondkleur voor lege ruimte */
+    border-radius: 10px; /* Ronde hoeken */
+    overflow: hidden; /* Zorg dat inhoud binnen blijft */
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Zachte schaduw */
+    opacity: 1; /* Maak het zichtbaar */
+    animation: none; /* Zorg dat standaard geen animatie draait */
+    transition: opacity 1s ease-in-out;
+}
+
+/* Standaard: verborgen */
+.hidden {
+    display: block;
+    opacity: 0;
+    
+} /* dit moet nu item komen omdat anders de opacity 1 is en de transition niet kan gebeuren, vanwege css regels met zelfde specifiteit is de opacity nu 1 */
+
+.photo-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Vul volledig zonder verhoudingen te verliezen */
+    display: block;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.photo-item:hover img {
+    transform: scale(1.05); /* Licht inzoomen bij hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.photo-item.animate {
+    animation: spinIn 0.8s ease-in-out forwards; /*animate wordt als klasse toeveogd en omdatt photo item er al was gaat dit van kracht*/
+}
+
+
+.timeline-header {
+    background-color: rgba(0, 51, 102, 0.1); /* Zacht blauw voor de header */
+    width: 100%;
+    padding: 30px 20px;
+    margin-bottom: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--color-secondary);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-header__h1 {
+    font-family: var(--ff-heading);
+    font-size: var(--font-size-heading);
+    margin-bottom: 10px;
+    color: var(--color-secondary);
+}
+
+.timeline-header p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: var(--color-text);
+}
+
+/* Knop styling */
+.timeline-header__button {
+    background-color: transparent;
+    color: var(--color-secondary);
+    border: 2px solid var(--color-secondary);
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.timeline-header__button:hover {
+    background-color: var(--color-primary);
+    color: #fff;
+    border: none;
+    transform: scale(1.05);
+}
+
+.timeline-header__button:active {
+    transform: translateY(2px); /* Lichtjes naar beneden */
+}
+
+
+.timeline-grid {
+    display: grid;
+    grid-template-columns: 40vw 1px 40vw; /* Linker kolom - Lijn - Rechter kolom */
+    gap: 30px;
+    padding: 2rem 1rem;
+    position: relative;
+    min-height: 100vh;
+    align-items: center;
+    justify-items: center;
+    max-width: 100vw;
+}
+
+.timeline__row {
+    display: contents; /* Laat rijen doorlopen binnen het grid */
+}
+
+.timeline__item {
+    background-color: #ffffff; /* Witte achtergrond voor een duidelijke kaart */
+    border-bottom: 4px solid var(--color-secondary); /* Alleen onderrand */
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06); /* Gelaagde schaduw voor diepte */
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    height: auto;
+    max-width: 90%;
+    margin: auto; /* Centraal in de grid geplaatst */
+}
+
+.timeline__item:hover {
+    transform: scale(1.02); /* Licht inzoomen bij hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sterkere schaduw bij hover */
+    background: linear-gradient(180deg, #ffffff, #f3f3f3);
+}
+
+
+.timeline__item--left {
+    grid-column: 1;
+    margin-right: 10px;
+    text-align:center;
+    max-width: 90%;
+    height: auto;
+    justify-self: end;
+   
+   
+}
+
+.timeline__item--right {
+    grid-column: 3;
+    margin-left: 10px;
+    text-align:justify;
+    width: 90%;
+    height: fit-content;
+    justify-self: start;
+   
+}
+
+.timeline__line {
+    grid-column: 2;
+    position: relative;
+    background-color: var(--color-secondary);
+    width: 2px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.timeline__line::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 3px;
+    min-height: 150%; /* Doorlopend over de volledige viewporthoogte */
+    background-color: var(--color-secondary);
+    z-index: 0; /* Zorg dat het achter andere elementen ligt */
+    grid-column: 2;
+}
+
+.timeline__line:nth-child(2)::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 3px;
+    min-height: 150%; /* Doorlopende lijn */
+    background-color: var(--color-secondary);
+    z-index: 0; /* Zorg dat het achter andere elementen ligt */
+    grid-column: 2; /* Blijf in het midden van de grid */
+}
+
+.timeline__icon.active {
+    background-color: var(--color-secondary);
+    transition: background-color 0.5s ease-in-out; /* Voeg ook hier de overgang toe */
+    
+}
+
+
+
+   
+
+.timeline__icon {
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border: 2px solid var(--color-secondary);
+    border-radius: 50%;
+    padding: 5px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: background-color 1s ease-in-out; /* Voeg ook hier de overgang toe */
+    will-change: transform; /* Optimaliseer voor transform-animaties */
+    
+}
+
+.timeline__icon:hover{
+
+    animation: pulse 2s infinite;
+    transform-origin: center;
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border: 2px solid var(--color-secondary);
+    border-radius: 50%;
+    padding: 5px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transform-origin: center;
+    transition: transform 2s ease-in-out, background-color 1s ease-in-out
+
+}
+
+
+.timeline__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 100%;
+    height: auto;
+    background-color: #f9f9f9; /* Subtiele lichtgrijze achtergrondkleur */
+    border-radius: 8px; /* Past bij de item-kaart */
+    padding: 1rem; /* Extra padding voor ruimte rondom de tekst */
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1); /* Subtiele binnenste schaduw */
+}
+
+
+
+.timeline__content h3 {
+    background-color: var(--color-secondary); /* Zacht blauw voor de header */
+    color: white;
+    text-align: center;
+    border: 2px solid white;
+    border-radius: 0 0 10px 10px; /* Alleen onderranden afronden */
+    min-width: 100%;
+    margin-bottom: 1rem; /* Ruimte onder de titel */
+    font-size: 1.3rem; /* Grotere koptekst */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Subtiele schaduw voor meer diepte */
+    min-width: 100%;
+    padding: 0.2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Schaduw voor een zwevend effect */
+
+}
+
+.timeline__content h3:hover {
+    background: linear-gradient(90deg, #0a9396, #94d2bd); /* Kleurovergang tijdens hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+.timeline__item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+.timeline__content figure {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end; /* Zorg dat de caption altijd onderaan staat */
+    text-align: center;
+    overflow: hidden;
+    height: 300px;
+    width: 100%; /* Breedte volledig benutten */
+    border-radius: 10px; /* Ronde hoeken voor een zachtere uitstraling */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Zachte schaduw voor diepte */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease; /* Overgangen voor hover */
+    margin-top: 1rem;
+    padding: 0;
+
+
+}
+
+.timeline__content figure:hover {
+    transform: scale(1.02); /* Een subtiele zoom-in bij hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Sterkere schaduw bij hover */
+}
+
+
+.timeline__content figure img {
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Zachte schaduw rondom de foto */
+    border: 3px solid #ffffff; /* Witte rand voor contrast */
+    object-fit: cover; /* Zorgt dat de afbeelding de container vult zonder vervorming */
+    border-radius: 10px; /* Past bij de container */
+}
+
+.timeline__content figcaption {
+    position: absolute; /* Zorg dat de caption bovenop de afbeelding ligt */
+    bottom: 10px; /* Plaatsing vanaf de onderkant */
+    left: 50%; /* Horizontaal gecentreerd */
+    transform: translateX(-50%); /* Correctie voor het midden */
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparante achtergrond */
+    color: white; /* Witte tekst */
+    padding: 5px 10px; /* Ruimte binnen het kadertje */
+    border-radius: 5px; /* Ronde hoeken voor het kadertje */
+    font-size: 0.8rem; /* Iets kleinere tekst */
+    font-style: italic; /* Subtiele stijl */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Zachte schaduw */
+    white-space: nowrap; /* Voorkomt dat de tekst breekt */
+}
+
+.fadeOut {
+    animation: fadeOut 0.7s ease-in-out forwards;
+}
+
+.navigate-grid {
+    display: grid;
+    grid-template-columns: 1fr 1px 1fr; /* Twee items en de middenlijn */
+    align-items: center;
+    justify-items: center;
+    padding: 2rem;
+    background-color: rgba(56, 142, 60, 0.15); /* Donkerder groen */
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.navigate-grid__item {
+    background-color: rgba(76, 175, 80, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    width: 85%;
+    
+}
+
+.navigate-grid__content {
+    background-color: white;
+    border: 3px solid rgba(76, 175, 80, 0.6);
+    padding: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    height: auto;
+    max-width: 80%;
+}
+
+
+
+.navigate-grid__item--left{
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    grid-column: 1;
+}
+
+.navigate-grid__content--left{
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+
+}
+
+.navigate-grid__content--right{
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+}
+
+.navigate-grid__item--right{
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    grid-column: 3;
+}
+
+
+.navigate-grid__line {
+    background-color: var(--color-primary);
+    width: 6px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    grid-column: 2;
+    z-index: 1;
+    height:100%;
+    border-radius: 100px;
+    border: 1px solid var(--color-secondary);
+
+}
+
+
+
+.navigate-icon {
+    position: relative;
+    display: flex;
+    width: 40px; /* Schaap icoon grootte */
+    height: 40px;
+    background-color: white;
+    border: 3px solid var(--color-bg);
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: box-shadow linear 0.5s, transform ease-in-out 0.2s;
+    z-index: 1;
+}
+
+.addEffect {
+    background-color: #C8E6C9; /* Hier wordt de achtergrondkleur toegepast */
+    transition: background-color 1s ease-in-out;
+    border-radius: 50%;
+    padding: 1rem;
+}
+
+
+
+
+.navigate-icon:hover {
+    box-shadow: 0 0 10px white;
+    transform: scale(1.2);
+    
+
+}
+
+.navigate-button {
+    display: inline-block;
+    padding: 0.8rem 1.2rem;
+    background-color: var(--color-primary);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.navigate-button:hover {
+    background-color: var(--color-secondary);
+}
+
+
+/* Container Grid */
+.overOns-mainGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding: 3rem;
+    background-color: var(--color-bg);
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Kolom basisstijl */
+.column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem;
+    background-image:
+        radial-gradient(circle, rgba(255, 255, 255, 0.5) 10%, rgba(255, 255, 255, 0.6) 90%),
+        url("../images/new_sheep_form_backgrond.webp");
+    background-size: cover, 80%; /* Achtergrondpatroon subtieler maken */
+    background-position: center top; /* Het patroon centreren */
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    grid-row: span 2;
+}
+
+.column:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Fotosectie */
+.overons-mainGrid__fotoSection {
+    width: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.2); /* Lichte achtergrond om de foto te accentueren */
+    padding: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgba(255, 255, 255, 0.8); /* Meer subtiele rand */
+}
+
+.overons-mainGrid__fotoSection img {
+    width: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 15px;
+}
+
+.overons-mainGrid__fotoSection:hover img {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Biosectie */
+.overOns-mainGrid__profielSection-bio {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.overOns-mainGrid__profielSection-bio h3 {
+    font-family: var(--ff-heading);
+    font-size: 1.5rem;
+    color: white;
+    background-color: var(--color-secondary);
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    padding: 0.4rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.overOns-mainGrid__profielSection-bio h3:hover {
+    background: linear-gradient(90deg, #0a9396, #94d2bd);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.overOns-mainGrid__profielSection-bio p {
+    font-family: var(--ff-base);
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #444;
+}
+
+/* Divider */
+.divider_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-image:
+        radial-gradient(circle, rgba(255, 255, 255, 0.4) 10%, rgba(255, 255, 255, 0.2) 90%),
+        url('/images/new_sheep_form_backgrond.webp');
+    background-size: cover, 70%;
+    background-position: center center;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    grid-column: 2;
+    grid-row: span 2;
+    width: 100%;
+    height: 100%;
+}
+
+.divider_background {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 1.5rem;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.divider_background img {
+    width: 180px;
+    height: 180px;
+    border: 3px solid var(--color-secondary);
+    border-radius: 50%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.divider_background img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Specifieke kolommen */
+.columnJoni {
+    grid-column: 1;
+}
+
+.columnGerald {
+    grid-column: 3;
+}
+
+
+@keyframes fadeOut {
+
+    0% {
+        opacity: 1;
+    }
+    100% {
+
+        opacity: 0;
+    }
+}
+    
+
+@keyframes spinIn {
+    0% {
+        transform: scale(0.8) rotate(-30deg);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1) rotate(0);
+        opacity: 1;
+    }
+}
+
+
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        transform-origin: center;
+
+     
+    }
+    50% {
+        transform: scale(1.1);
+        transform-origin: center;
+
+        
+    }
+}
+
+
+
+
+
+
+
+/* Responsive aanpassingen */
+@media (max-width: 768px) {
+    .header__title {
+        font-size: 1.5rem;
+    }
+    .header__navigation-ul {
+        gap: 10px;
+        padding: 8px 0;
+    }
+    .header__h1-logo {
+        width: 80px;
+    }
+
+    .footer {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}

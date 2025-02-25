@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Kevin de Schepper">
+    <meta name="description" content="Schapenhouderij Van den Heuvel webshop"> 
+    <title>Schapenhouder VDH - Contact</title>
+    <link rel="icon" href="./images/sheep-favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <script defer  type="module" src="js/main.js"></script>
+</head>
+<body>
+    <!-- Header met achtergrondafbeelding en logo -->
+    <header class="header">
+        <figure class="header__banner">
+            <figcaption class="offscreen">Header_BANNER_IMG</figcaption>
+        </figure>
+        <div class="header__top-bar">
+            <p class="header__contact-info">webshopvandenheuvel@gmail.com </p>
+        </div>
+        <h1 class="header__title">
+            <figure>
+                <img src="images/logo.jpg" alt="Logo Schapenhouderij van den Heuvel" class="header__h1-logo">
+                <figcaption class="offscreen">Header_logo_van_den_Heuvel</figcaption>
+            </figure>
+            Schapenhouderij Van den Heuvel
+        </h1>
+    </header>
+    
+    <!-- Sticky Navigatiebalk -->
+    <nav class="header__navigation">
+        <ul class="header__navigation-ul">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="#producten">Producten</a></li>
+            <li><a href="overOns.html">Over ons</a></li>
+            <li><a id="active-navLink" href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <main class="main-content__grid">
+        <section class="main-content__form-section">
+           
+            <form id ="contact-form"class="main-content__grid-form" method="post" novalidate> 
+                <fieldset class="form__fieldset">
+                    <legend class="form__legend">Contact-gegevens</legend>
+
+                    <label class="form__label" for="persoonVoornaam">Voornaam</label>
+                    <div id="persoonVoornaamMelding" class="form__Melding"></div>
+                    <input type="text" id="persoonVoornaam" name="inzender_persoonvoornaam" autocomplete="off" required>  
+                  
+                        
+                
+                    <div id="persoonAchternaamMelding" class="form__Melding"></div>
+                    <label class="form__label" for="persoonAchternaam">Achternaam</label>
+                    <input type="text" id="persoonAchternaam" name="inzender_achternaam" autocomplete="off" required>
+                   
+                   
+                    <label class="form__label" for="emailadres">E-mailadres</label>
+                    <div id="emailadresMelding" class="form__Melding"></div>
+                    <input type="email" id="emailadres" name="emailadres" autocomplete="off" required>
+        
+                </fieldset>
+                
+                <fieldset class="form__fieldset">
+                    <legend class="form__legend">Vragen en verzoeken</legend>
+                    
+                    <label class="form__label" for="vragenVerzoeken">Invulveld</label>
+                    <textarea class="form_textarea" id="vragenVerzoeken" name="vragenVerzoeken" maxlength="600" rows="5"></textarea>
+                    <div id="vragenVerzoekenMelding" class="form__Melding"></div>
+                    
+                    <p class="tekenTeller"><span id="tekenTeller"></span></p>
+                    
+                    <div class="contact">
+                        <p>Contact: 
+                            <a class="contact__mailto" href="mailto:webshopvandenheuvel@gmail.com">webshopvandenheuvel@gmail.com</a>
+                        </p>
+                    </div>
+                </fieldset>
+
+                <div type = "submit" id="verzendknop_Melding" class="form__Melding"></div>
+                <button id="verzendknop" type="submit">Verzenden</button>
+             
+            </form>
+            
+                
+        </section>
+        <section class="main-content__grid-section-grid">
+            <div class="photo-grid">
+                <div class="hidden photo-item">
+                    <img src="images/grid_foto_1.jpg" alt="Foto 1">
+                </div>
+                <div class="hidden photo-item">
+                    <img src="images/grid_foto_2.jpg" alt="Foto 2">
+                </div>
+                <div class="hidden photo-item">
+                    <img src="images/grid_foto_3.jpg" alt="Foto 3">
+                </div>
+                <div class="hidden photo-item">
+                    <img src="images/grid_foto_4.jpg" alt="Foto 4">
+                </div>
+                <div class="hidden photo-item">
+                    <img src="images/grid_foto_5.jpg" alt="Foto 5">
+                </div>
+                <div class="hidden photo-item">
+                    <img src="images/grid_foto_6.jpg" alt="Foto 6">
+                </div>
+            </div>
+        </section>
+        
+
+    </main>
+    <footer class="footer">
+        <section class="footer__section-contact">
+            <h2>Contact</h2>
+            <address>
+                <p>Geerstraat 14</p>
+                <p>Herwijnen, Nederland</p>
+            </address>
+            <p>Email: <a href="mailto:webshopvandenheuvel@gmail.com">webshopvandenheuvel@gmail.com</a></p>
+        </section>
+        <section class="footer__section-social">
+            <h2>Volg ons</h2>
+            <a href="https://www.instagram.com/schapenhouderij_van_den_heuvel/" target="_blank" class="instagram-link">
+                <div class="instagram">
+                    <span></span> <!-- Kleine stip voor het logo -->
+                </div>
+            </a>
+        </section>
+    </footer>
+</body>
+</html>
